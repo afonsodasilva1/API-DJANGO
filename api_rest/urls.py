@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('users/', views.get_users, name='get_all_users'),
     path('user/<str:nick>', views.get_user_by_nick, name='get_user_by_nick'),
+    path('data/', views.user_manage),
 ]
