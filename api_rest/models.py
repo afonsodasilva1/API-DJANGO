@@ -10,3 +10,7 @@ class User(models.Model):
 
     def __str__(self):
         return f'Nickname: {self.user_nickname} | E-mail: {self.user_email}'
+
+class UserTasks(models.Model):
+    user_nickname = models.CharField(max_length=100, default='')
+    user_task = models.CharField(max_length=255, default='')
