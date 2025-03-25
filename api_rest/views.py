@@ -27,13 +27,16 @@ def get_users(request):
 
 @api_view(['GET'])
 def get_user_by_nick(request, nick):
+    
     try: 
         user = User.objects.get(pk=nick)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     if(request.method == 'GET'):
+
         serializer = UserSerializer(user)
+
         return Response(serializer.data)
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
@@ -61,7 +64,7 @@ def user_manage(request):
     if request.method == 'POST':
 
         new_user = request.data
-        
+
         serializer = UserSerializer(data=new_user)
 
         if serializer.is_valid():
