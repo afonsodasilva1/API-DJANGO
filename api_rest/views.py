@@ -63,8 +63,11 @@ def user_manage(request):
         serializer = UserSerializer(data=new_user)
 
         if serializer.is_valid():
+            
             serializer.save()
+
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 #EDITANDO OS DADOS (PUT)
