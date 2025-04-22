@@ -29,7 +29,7 @@ def get_users(request):
 def get_user_by_nick(request, nick):
     
     try: 
-        user = User.objects.get(pk=nick)
+        user = User.objects.get(pk=nidk)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
